@@ -1,8 +1,11 @@
 #include <string>
 #include <map>
-#include <../enums/StatEnum.h>
 using namespace std;
 
+#ifndef ACTOR_H
+#define ACTOR_H
+
+#include <../enums/StatEnum.h>
 
 class Actor {
     //ATTRIBUTES
@@ -103,6 +106,10 @@ class Actor {
 
 
     //METHODS
+    public: Actor();
+
+
+
     /**
      * @brief Constructor for Actor which accepts a map of values which serve as the actor's stats.
      * @param statMap map containing the base stats of the actor.
@@ -269,4 +276,9 @@ class Actor {
     //public: Weapon getWeapon();
 
     //ADD SKILL RELATED STUFF LATER
+
+    public: bool operator<(const Actor& other) const;
+    public: bool operator>(const Actor& other) const;
 };
+
+#endif

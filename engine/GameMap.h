@@ -6,7 +6,10 @@ using namespace std;
 
 #include "Tile.h"
 #include "TileConverter.h"
+#include "Actor.h"
 
+
+class Location;
 
 /**
  * @brief Class for storing the game map, and tracking the tiles and actors.
@@ -82,12 +85,13 @@ class GameMap {
      */
     public: void setTileAt(int x, int y, Tile* tile);
 
-    //public: Actor getActorAt(Tile tile);
-    //public: void addActor(Actor actor, Tile tile);
-    //public: void removeActor(Actor actor);
-    //public: void moveActor(Actor actor, Tile tile);
-    //public: Tile getLocationOfActor(Actor actor);
-    //public: bool hasActor(Tile tile);
+    public: Actor getActorAt(Location location);
+    public: void addActor(Actor actor, Location location);
+    public: void removeActor(Actor actor);
+    public: void locationHasActor(Location location);
+    public: void moveActor(Actor actor, Location location);
+    public: Location getLocationOfActor(Actor actor);
+    public: bool hasActor(Location location);
 
     /**
      * @brief Method that is called once per action, which adds time dependence.

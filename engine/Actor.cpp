@@ -1,6 +1,10 @@
 #include "Actor.h"
 
 
+Actor::Actor() {}
+
+
+
 Actor::Actor(string name, map<StatEnum, int> statMap) {
     this->name = name;
     this->level = statMap.find(StatEnum::LEVEL)->second;
@@ -148,4 +152,14 @@ void Actor::heal(int healAmount) {
     else {
         this->hp = maxHp;
     }
+}
+
+
+bool Actor::operator<(const Actor& other) const {
+    return false;
+}
+
+
+bool Actor::operator>(const Actor& other) const {
+    return false;
 }

@@ -1,4 +1,5 @@
 #include "GameMap.h"
+#include "Location.h"
 
 
 GameMap::GameMap(string* mapStrings) {
